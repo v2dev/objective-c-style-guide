@@ -1,18 +1,6 @@
-# The official raywenderlich.com Objective-C style guide.
+# The official V2 Solutions Objective-C style guide.
 
-This style guide outlines the coding conventions for raywenderlich.com.
-
-## Introduction
-
-The reason we made this style guide was so that we could keep the code in our books, tutorials, and starter kits nice and consistent - even though we have many different authors working on the books.
-
-This style guide is different from other Objective-C style guides you may see, because the focus is centered on readability for print and the web. Many of the decisions were made with an eye toward conserving space for print, easy legibility, and tutorial writing.
-
-## Credits
-
-The creation of this style guide was a collaborative effort from various raywenderlich.com team members under the direction of Nicholas Waynik.  The team includes: [Soheil Moayedi Azarpour](https://github.com/moayes), [Ricardo Rendon Cepeda](https://github.com/ricardo-rendoncepeda), [Tony Dahbura](https://github.com/tdahbura), [Colin Eberhardt](https://github.com/ColinEberhardt), [Matt Galloway](https://github.com/mattjgalloway), [Greg Heo](https://github.com/gregheo), [Matthijs Hollemans](https://github.com/hollance), [Christopher LaPollo](https://github.com/elephantronic), [Saul Mora](https://github.com/casademora), [Andy Pereira](https://github.com/macandyp), [Mic Pringle](https://github.com/micpringle), [Pietro Rea](https://github.com/pietrorea), [Cesare Rocchi](https://github.com/funkyboy), [Marin Todorov](https://github.com/icanzilb), [Nicholas Waynik](https://github.com/ndubbs), and [Ray Wenderlich](https://github.com/raywenderlich)
-
-We would like to thank the creators of the [New York Times](https://github.com/NYTimes/objective-c-style-guide) and [Robots & Pencils'](https://github.com/RobotsAndPencils/objective-c-style-guide) Objective-C Style Guides.  These two style guides provided a solid starting point for this guide to be created and based upon.
+This style guide outlines the coding conventions for all V2 Solutions Objective-C code.
 
 ## Background
 
@@ -190,9 +178,9 @@ UIButton *settingsButton;
 UIButton *setBut;
 ```
 
-A three letter prefix should always be used for class names and constants, however may be omitted for Core Data entity names. For any official raywenderlich.com books, starter kits, or tutorials, the prefix 'RWT' should be used.
+A four letter prefix should always be used for class names and constants, however may be omitted for Core Data entity names. The 2 letter customer code and 2 letter project code should be used as in LTMCLoginViewController. For V2-specific lbraries, the V2 should be considered the customer.
 
-Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity.
+Constants should be CamelCase with all words capitalized and prefixed by the related class name for clarity.
 
 **Preferred:**
 
@@ -671,7 +659,7 @@ Some of Apple’s APIs write garbage values to the error parameter (if non-NULL)
 
 ## Singletons
 
-Singleton objects should use a thread-safe pattern for creating their shared instance.
+Singleton objects should usually be avoided.  When a singleton pattern must be used, use a thread-safe pattern for creating their shared instance.
 ```objc
 + (instancetype)sharedInstance {
   static id sharedInstance = nil;
@@ -700,21 +688,6 @@ A long line of code like this should be carried on to the second line adhering t
 self.productsRequest = [[SKProductsRequest alloc] 
   initWithProductIdentifiers:productIdentifiers];
 ```
-
-
-## Smiley Face
-
-Smiley faces are a very prominent style feature of the raywenderlich.com site!  It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic.  The end square bracket is used because it represents the largest smile able to be captured using ascii art.  A half-hearted smile is represented if an end parenthesis is used, and thus not preferred.
-
-**Preferred:**
-```objc
-:]
-```
-
-**Not Preferred:**
-```objc
-:)
-```  
 
 
 ## Xcode project
